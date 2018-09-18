@@ -1,0 +1,39 @@
+.navbar{
+    background-color:#5ca5a2;
+    border-bottom: 5px solid #86dae7;
+}
+
+#logo{
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+i.fas.fa-utensils{
+    margin-right:10px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight:bold;
+}
+
+.navbar ul li {
+    border-right:2px solid #fff;
+    line-height: 10px;
+  } 
+
+.navbar ul li:nth-last-child(1) {
+    margin-right: 0px;
+    border-right: none;
+    padding: 0px;
+} 
+
+button.navbar-toggler{
+ border-color: white !important;
+}
+
+span.navbar-toggler-icon{
+    color:white !important;
+    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)'"); */
+}
