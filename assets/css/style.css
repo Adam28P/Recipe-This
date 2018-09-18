@@ -37,3 +37,9 @@ span.navbar-toggler-icon{
     color:white !important;
     /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)'"); */
 }
+
+@media only screen and (max-width: 991px) {
+    .navbar ul li {
+        border-right: none;
+    }
+}
