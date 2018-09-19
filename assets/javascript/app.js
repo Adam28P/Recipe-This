@@ -19,6 +19,8 @@ $(document).ready(function () {
         var userPass = $("#password").val();
 
         firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(function(user) {
+            var userInfo = firebase.auth().currentUser;
+            database.ref("users").child(userInfo.uid).set({ email: userEmail, password: userPass, favouriteRecipeId: 'none' }).catch(function(error) { console.error(error); });
             window.location.replace("profile.html");
         }).catch(function (error) {
             // Handle Errors here.
