@@ -13,6 +13,9 @@
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Tags Input CSS stylesheet -->
+    <link rel="stylesheet" href="assets/css/tagsinput.css">
+
     <!-- Link to FontAwesome stylesheet-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
@@ -97,8 +100,14 @@
         </div>
 
         <div class="container" id="loggedInIndex" style="margin-top:50px">
-            <center><p><strong>Type in the name of each ingredient into the box below, then press "Recipe This!" to find a list of
-            possible delicious foods you can make!</strong></p></center>
+            <p><strong>Type in the name of each ingredient into the box below, then press "Recipe This!" to find a list
+                    of
+                    possible delicious foods you can make!</strong></p>
+            <div style="padding-bottom:20px; border-bottom: 1px solid black;">
+                <input type="text" name="ingredients" id="ingredients" class="form-control" data-role="tagsinput"
+                    placeholder="Enter ingredient(s) here...">
+            </div>
+
         </div>
     </div>
 
@@ -119,6 +128,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+    <script src="assets/javascript/tagsinput.js"></script>
+
 </body>
 
 </html>
