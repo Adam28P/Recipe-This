@@ -73,6 +73,10 @@ span.navbar-toggler-icon{
       display:none;
   }
 
+  #loggedOutIndex{
+      display:none;
+  }
+
   #login .container #login-row #login-column #login-box {
     /* margin-top: 120px; */
     max-width: 600px;

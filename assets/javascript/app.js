@@ -58,11 +58,13 @@ $(document).ready(function () {
         if (user) {
             // User is signed in. Show appropriate divs
             $(".loggedOutNav").css("display", "none");
+            $("#loggedOutIndex").css("display", "none");
             $(".loggedInNav").css("display", "block");
             redirectLogin();
         } else {
             // No user is signed in. Hide appropriate divs
             $(".loggedOutNav").css("display", "block");
+            $("#loggedOutIndex").css("display", "block");
             $(".loggedInNav").css("display", "none");
         }
     });
