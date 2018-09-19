@@ -65,6 +65,57 @@ span.navbar-toggler-icon{
 
   /* END FOOTER STYLING */
 
+  #registerContainer, #loginContainer{
+      margin-top:80px;
+  }
+
+  .loggedInNav, .loggedOutNav{
+      display:none;
+  }
+
+  #login .container #login-row #login-column #login-box {
+    /* margin-top: 120px; */
+    max-width: 600px;
+    height: 350px;
+    border: 1px solid #9C9C9C;
+    background-color:#5ca5a2;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }
+
+  #register .container #register-row #register-column #register-box {
+    /* margin-top: 120px; */
+    max-width: 600px;
+    height: 350px;
+    border: 1px solid #9C9C9C;
+    background-color:#5ca5a2;
+  }
+  #register .container #register-row #register-column #register-box #register-form {
+    padding: 20px;
+  }
+  #register .container #register-row #register-column #register-box #register-form #register-link {
+    margin-top: -85px;
+  }
+
+  .text-info {
+    color: white !important;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #e53c3c;
+    border-color: #e53c3c;
+}
+
+.btn-info:hover{
+    background-color:#cc3535;
+}
+
+
 @media only screen and (max-width: 991px) {
     .navbar ul li {
         border-right: none;

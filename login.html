@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <script type="text/javascript"> 
+        function redirectLogin() {
+            window.location.replace("index.html");
+        }
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,7 +28,7 @@
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
 
-    <title>Recipe This!</title>
+    <title>Recipe This! | Login</title>
 </head>
 
 <body>
@@ -83,12 +88,33 @@
         </nav>
         <!-- End of logged in navbar -->
 
-        <div class="container" style="margin-top:100px">
-            <center>
-                <h1>The place to use all of your leftover ingredients to create something delicious! </h1>
-            </center>
-
-            <center><h3 style="margin-top:150px">Register or login to start! </h3></center>
+        <div id="login">
+            <div class="container" id="loginContainer">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form id="login-form" class="form" action="" method="post">
+                                <h3 class="text-center text-info">Login</h3>
+                                <div class="form-group">
+                                    <label for="email" class="text-info">Email:</label><br>
+                                    <input type="text" name="email" id="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="text-info">Password:</label><br>
+                                    <input type="password" name="password" id="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <div id="errorMessage"></div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submitLogin" id="submitLogin" class="btn btn-info btn-md"
+                                        value="Submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
