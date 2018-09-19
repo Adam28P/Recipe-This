@@ -81,11 +81,8 @@ $(document).ready(function () {
                 return
             }
 
-            var resultCount = response.count;
 
             var table = $("<table>");
-
-            $(".recipe-count").html(resultCount);
 
             for (var i = 0; i < response.hits.length; i++) {
                 // Retrieving the URL for the image
@@ -95,7 +92,7 @@ $(document).ready(function () {
                 var image = $("<img>").attr("src", imgURL).css("width", "20%");
 
                 // Displaying the image
-                $(".recipe-results").append(resultCount).append(image);
+                $(".recipe-results").append(image);
             }
 
         }).catch(function (error) {
@@ -106,6 +103,7 @@ $(document).ready(function () {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            $("#userProfileEmail").html("<strong>User Email:</strong> " + user.email);
             // User is signed in. Show appropriate divs
             $(".loggedOutNav").css("display", "none");
             $("#loggedOutIndex").css("display", "none");
@@ -118,6 +116,7 @@ $(document).ready(function () {
             $("#loggedOutIndex").css("display", "block");
             $("#loggedInIndex").css("display", "none");
             $(".loggedInNav").css("display", "none");
+            redirectProfile();
         }
     });
 
