@@ -73,7 +73,7 @@ span.navbar-toggler-icon{
       display:none;
   }
 
-  #loggedOutIndex{
+  #loggedOutIndex, #loggedInIndex{
       display:none;
   }
 

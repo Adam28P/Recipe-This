@@ -61,12 +61,14 @@ $(document).ready(function () {
             // User is signed in. Show appropriate divs
             $(".loggedOutNav").css("display", "none");
             $("#loggedOutIndex").css("display", "none");
+            $("#loggedInIndex").css("display", "block");
             $(".loggedInNav").css("display", "block");
             redirectLogin();
         } else {
             // No user is signed in. Hide appropriate divs
             $(".loggedOutNav").css("display", "block");
             $("#loggedOutIndex").css("display", "block");
+            $("#loggedInIndex").css("display", "none");
             $(".loggedInNav").css("display", "none");
         }
     });
