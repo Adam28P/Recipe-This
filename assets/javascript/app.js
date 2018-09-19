@@ -64,59 +64,61 @@ $(document).ready(function () {
 
     $("#submitIngredients").on("click", function () {
         $(".recipe-image").html(" ");
-            var ingredientList = $("#ingredients").val();
-            var replacedList = ingredientList.replace(/,/g, '%20');
+        var ingredientList = $("#ingredients").val();
+        var replacedList = ingredientList.replace(/,/g, '%20');
 
-            var queryURL = "https://api.edamam.com/search?q=" + replacedList + "&app_id=c7fb9130&app_key=77f5b40a85cd387b14fd6066951c8009";
+        var queryURL = "https://api.edamam.com/search?q=" + replacedList + "&app_id=c7fb9130&app_key=77f5b40a85cd387b14fd6066951c8009";
 
 
-            // Creating an AJAX call for the specific movie button being clicked
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                    console.log(response);
-                    if (response.Error) {
-                        console.log("Error: " + response.Error);
-                        return
-                    }
+        // Creating an AJAX call for the specific movie button being clicked
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            if (response.Error) {
+                console.log("Error: " + response.Error);
+                return
+            }
 
-                  var resultCount = response.count;
+            var resultCount = response.count;
 
-                  $(".recipe-count").html(resultCount);
+            var table = $("<table>");
 
-                    for (var i = 0; i < response.hits.length; i++) {
-                    // Retrieving the URL for the image
-                    var imgURL = response.hits[i].recipe.image;
-                    console.log(imgURL);
-                    // Creating an element to hold the image
-                    var image = $("<img>").attr("src", imgURL).css("width", "20%");
+            $(".recipe-count").html(resultCount);
 
-                    // Displaying the image
-                    $(".recipe-image").append(image);
-                }
+            for (var i = 0; i < response.hits.length; i++) {
+                // Retrieving the URL for the image
+                var imgURL = response.hits[i].recipe.image;
+                console.log(imgURL);
+                // Creating an element to hold the image
+                var image = $("<img>").attr("src", imgURL).css("width", "20%");
 
-            }).catch(function (error) {
+                // Displaying the image
+                $(".recipe-results").append(resultCount).append(image);
+            }
+
+        }).catch(function (error) {
             console.log(error);
         });
 
     });
 
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        // User is signed in. Show appropriate divs
-        $(".loggedOutNav").css("display", "none");
-        $("#loggedOutIndex").css("display", "none");
-        $("#loggedInIndex").css("display", "block");
-        $(".loggedInNav").css("display", "block");
-        redirectLogin();
-    } else {
-        // No user is signed in. Hide appropriate divs
-        $(".loggedOutNav").css("display", "block");
-        $("#loggedOutIndex").css("display", "block");
-        $("#loggedInIndex").css("display", "none");
-        $(".loggedInNav").css("display", "none");
-    }
-});
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in. Show appropriate divs
+            $(".loggedOutNav").css("display", "none");
+            $("#loggedOutIndex").css("display", "none");
+            $("#loggedInIndex").css("display", "block");
+            $(".loggedInNav").css("display", "block");
+            redirectLogin();
+        } else {
+            // No user is signed in. Hide appropriate divs
+            $(".loggedOutNav").css("display", "block");
+            $("#loggedOutIndex").css("display", "block");
+            $("#loggedInIndex").css("display", "none");
+            $(".loggedInNav").css("display", "none");
+        }
+    });
 
 });

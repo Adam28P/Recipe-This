@@ -1,21 +1,31 @@
-.navbar{
-    background-color:#5ca5a2;
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+#entire-wrapper {
+    min-height: 100%;
+    margin-bottom: 150px;
+}
+
+.navbar {
+    background-color: #5ca5a2;
     border-bottom: 5px solid #86dae7;
 }
 
-#logo{
-    color:white;
+#logo {
+    color: white;
     font-size: 35px;
     font-weight: bold;
 }
 
-i.fas.fa-utensils{
-    margin-right:10px;
+i.fas.fa-utensils {
+    margin-right: 10px;
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: white;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -23,89 +33,96 @@ i.fas.fa-utensils{
 }
 
 .navbar ul li {
-    border-right:2px solid #fff;
+    border-right: 2px solid #fff;
     line-height: 10px;
-  } 
+}
 
 .navbar ul li:nth-last-child(1) {
     margin-right: 0px;
     border-right: none;
     padding: 0px;
-} 
-
-button.navbar-toggler{
- border-color: white !important;
 }
 
-span.navbar-toggler-icon{
-    color:white !important;
+button.navbar-toggler {
+    border-color: white !important;
+}
+
+span.navbar-toggler-icon {
+    color: white !important;
     /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)'"); */
 }
 
-  /* START FOOTER STYLING */
-  .footer {
+/* START FOOTER STYLING */
+.footer {
     position: absolute;
     bottom: 0;
-    left:0;
+    left: 0;
     width: 100%;
     height: 100px;
     background-color: #5ca5a2;
-  }
-  
-  .text-muted-footer {
+}
+
+.text-muted-footer {
     margin-top: 35px;
     color: #fff !important;
-  }
-  
-  .two-toned-footer-color {
+}
+
+.two-toned-footer-color {
     height: 6px;
     padding-top: 3px;
     background-color: #86dae7;
-  }
+}
 
-  /* END FOOTER STYLING */
+/* END FOOTER STYLING */
 
-  #registerContainer, #loginContainer{
-      margin-top:80px;
-  }
+#registerContainer,
+#loginContainer {
+    margin-top: 80px;
+}
 
-  .loggedInNav, .loggedOutNav{
-      display:none;
-  }
+.loggedInNav,
+.loggedOutNav {
+    display: none;
+}
 
-  #loggedOutIndex, #loggedInIndex{
-      display:none;
-  }
+#loggedOutIndex,
+#loggedInIndex {
+    display: none;
+}
 
-  #login .container #login-row #login-column #login-box {
+#login .container #login-row #login-column #login-box {
     /* margin-top: 120px; */
     max-width: 600px;
     height: 350px;
     border: 1px solid #9C9C9C;
-    background-color:#5ca5a2;
-  }
-  #login .container #login-row #login-column #login-box #login-form {
-    padding: 20px;
-  }
-  #login .container #login-row #login-column #login-box #login-form #register-link {
-    margin-top: -85px;
-  }
+    background-color: #5ca5a2;
+}
 
-  #register .container #register-row #register-column #register-box {
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+#register .container #register-row #register-column #register-box {
     /* margin-top: 120px; */
     max-width: 600px;
     height: 350px;
     border: 1px solid #9C9C9C;
-    background-color:#5ca5a2;
-  }
-  #register .container #register-row #register-column #register-box #register-form {
-    padding: 20px;
-  }
-  #register .container #register-row #register-column #register-box #register-form #register-link {
-    margin-top: -85px;
-  }
+    background-color: #5ca5a2;
+}
 
-  .text-info {
+#register .container #register-row #register-column #register-box #register-form {
+    padding: 20px;
+}
+
+#register .container #register-row #register-column #register-box #register-form #register-link {
+    margin-top: -85px;
+}
+
+.text-info {
     color: white !important;
 }
 
@@ -115,8 +132,8 @@ span.navbar-toggler-icon{
     border-color: #e53c3c;
 }
 
-.btn-info:hover{
-    background-color:#cc3535;
+.btn-info:hover {
+    background-color: #cc3535;
 }
 
 
