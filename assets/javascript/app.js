@@ -67,44 +67,51 @@ $(document).ready(function () {
         var ingredientList = $("#ingredients").val();
         var replacedList = ingredientList.replace(/,/g, '%20');
 
-        var queryURL = "https://api.edamam.com/search?q=" + replacedList + "&app_id=c7fb9130&app_key=77f5b40a85cd387b14fd6066951c8009";
+        if (ingredientList == "") {
+            alert("You must enter at least 1 ingredient.");
+        } else {
 
+            var queryURL = "https://api.edamam.com/search?q=" + replacedList + "&app_id=c7fb9130&app_key=77f5b40a85cd387b14fd6066951c8009";
 
-        // Creating an AJAX call for the specific movie button being clicked
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-            if (response.Error) {
-                console.log("Error: " + response.Error);
-                return
-            }
+            // Creating an AJAX call for the specific movie button being clicked
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+                if (response.Error) {
+                    console.log("Error: " + response.Error);
+                    return
+                }
 
-
-            var table = $("<table>");
-
-            for (var i = 0; i < response.hits.length; i++) {
-                // Retrieving the URL for the image
-                var imgURL = response.hits[i].recipe.image;
-
-                // Creating an element to hold the image
-                var image = $("<img>").attr("src", imgURL).css("width", "20%");
-
-                var recipeLabel = response.hits[i].recipe.label;
-                var recipeSource = response.hits[i].recipe.source;
-                var recipeUrl = response.hits[i].recipe.url;
 
                 var table = $("<table>");
-                var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td><h3>" + recipeLabel + "</h3><br /><strong>Recipe Source Website:</strong> " + recipeSource + "<br /><strong>Recipe URL:</strong> <a href='" + recipeUrl + "' target='_blank'>Go to website</a><br /></td></tr>")
 
-                table.append(row);
-                $(".recipe-results").append(table);
-            }
+                for (var i = 0; i < response.hits.length; i++) {
+                    // Retrieving the URL for the image
+                    var imgURL = response.hits[i].recipe.image;
 
-        }).catch(function (error) {
-            console.log(error);
-        });
+                    // Creating an element to hold the image
+                    var image = $("<img>").attr("src", imgURL).css("width", "20%");
+
+                    var recipeLabel = response.hits[i].recipe.label;
+                    var recipeSource = response.hits[i].recipe.source;
+                    var recipeUrl = response.hits[i].recipe.url;
+
+                    var table = $("<table>");
+                    var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td style='padding-left:15px;'><h3>" + recipeLabel + "</h3><br /><strong>Recipe Source Website:</strong> " + recipeSource + "<br /><strong>Recipe URL:</strong> <a href='" + recipeUrl + "' target='_blank'>Go to website</a><br /></td></tr>")
+
+                    table.append(row);
+                    $(".recipe-results").append(table);
+                }
+
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+        }
+
+
 
     });
 
