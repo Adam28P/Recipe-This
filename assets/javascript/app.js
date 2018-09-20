@@ -108,11 +108,15 @@ $(document).ready(function () {
                     var recipeSource = response.hits[i].recipe.source;
                     var recipeUrl = response.hits[i].recipe.url;
 
-                    var table = $("<table>");
-                    var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td style='padding-left:15px;'><h3>" + recipeLabel + "</h3><strong>Recipe Source Website:</strong> " + recipeSource + "<br /><strong>Recipe URL:</strong> <a href='" + recipeUrl + "' target='_blank'>Go to website</a><br /></td></tr>")
+                    // var table = $("<table>");
+                    // var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td style='padding-left:15px;'><h3>" + recipeLabel + "</h3><strong>Recipe Source Website:</strong> " + recipeSource + "<br /><strong>Recipe URL:</strong> <a href='" + recipeUrl + "' target='_blank'>Go to website</a><br /></td></tr>")
 
-                    table.append(row);
-                    $(".recipe-results").append(table);
+                    // table.append(row);
+                    // $(".recipe-results").append(table);
+
+                    var resultCard = $("<div style='width:300px; float:left; margin-right:20px; margin-bottom:20px; height: 470px;' class='card'><img class='card-img-top' src='" + response.hits[i].recipe.image + "' /><div class='card-body'><h5 class='card-title'>" + recipeLabel + "</h5><p class='card-text'><strong>Source Website:</strong> " + recipeSource + "</p><a href='" + recipeUrl + "' class='btn btn-primary' target='_blank'>Go to Recipe</a></div>");
+                  
+                     $(".recipe-results").append(resultCard);
                 }
 
             }).catch(function (error) {
