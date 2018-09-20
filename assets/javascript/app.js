@@ -64,11 +64,12 @@ $(document).ready(function () {
 
     $("#submitIngredients").on("click", function () {
         $(".recipe-results").html("");
+        $("#errorIngredients").html("");
         var ingredientList = $("#ingredients").val();
         var replacedList = ingredientList.replace(/,/g, '%20');
 
         if (ingredientList == "") {
-            alert("You must enter at least 1 ingredient.");
+            $("#errorIngredients").html("You must enter at least 1 ingredient.")
         } else {
 
             var queryURL = "https://api.edamam.com/search?q=" + replacedList + "&app_id=c7fb9130&app_key=77f5b40a85cd387b14fd6066951c8009";
