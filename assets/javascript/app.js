@@ -109,7 +109,7 @@ $(document).ready(function () {
                     var recipeUrl = response.hits[i].recipe.url;
 
                     var table = $("<table>");
-                    var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td style='padding-left:15px;'><h3>" + recipeLabel + "</h3><br /><strong>Recipe Source Website:</strong> " + recipeSource + "<br /><strong>Recipe URL:</strong> <a href='" + recipeUrl + "' target='_blank'>Go to website</a><br /></td></tr>")
+                    var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td style='padding-left:15px;'><h3>" + recipeLabel + "</h3><strong>Recipe Source Website:</strong> " + recipeSource + "<br /><strong>Recipe URL:</strong> <a href='" + recipeUrl + "' target='_blank'>Go to website</a><br /></td></tr>")
 
                     table.append(row);
                     $(".recipe-results").append(table);

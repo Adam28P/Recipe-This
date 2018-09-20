@@ -141,4 +141,12 @@ span.navbar-toggler-icon {
     .navbar ul li {
         border-right: none;
     }
+
+    td{
+        display:block;
+    }
+
+    img{
+        width:100%;
+    }
 }
