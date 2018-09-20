@@ -85,6 +85,15 @@ $(document).ready(function () {
                     return
                 }
 
+                var recipeCount = response.count;
+
+                if(recipeCount === 0){
+                $("#errorIngredients").html("There are no recipes available with these ingredients. Please modify your ingredients and try again.");
+                } else if (recipeCount === 1){
+                    $("#errorIngredients").html("There is 1 recipe available with this ingredient.");
+                } else {
+                    $("#errorIngredients").html("There are " + recipeCount + " recipes available with these ingredients.");
+                }
 
                 var table = $("<table>");
 
