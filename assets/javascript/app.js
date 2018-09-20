@@ -63,7 +63,7 @@ $(document).ready(function () {
     });
 
     $("#submitIngredients").on("click", function () {
-        $(".recipe-image").html(" ");
+        $(".recipe-results").html("");
         var ingredientList = $("#ingredients").val();
         var replacedList = ingredientList.replace(/,/g, '%20');
 
@@ -87,12 +87,17 @@ $(document).ready(function () {
             for (var i = 0; i < response.hits.length; i++) {
                 // Retrieving the URL for the image
                 var imgURL = response.hits[i].recipe.image;
-                console.log(imgURL);
+
                 // Creating an element to hold the image
                 var image = $("<img>").attr("src", imgURL).css("width", "20%");
 
-                // Displaying the image
-                $(".recipe-results").append(image);
+                var recipeLabel = response.hits[i].recipe.label;
+
+                var table = $("<table>");
+                var row = $("<tr><td><img src='" + response.hits[i].recipe.image + "' /></td><td><strong>" + recipeLabel + "</strong></td></tr>")
+
+                table.append(row);
+                $(".recipe-results").append(table);
             }
 
         }).catch(function (error) {
